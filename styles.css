@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  color: yellow;
+  user-select: none;
+}
+
+body{
+  background-color: rgb(6, 6, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow: hidden;
+
+}
+
+canvas {
+  background-color: black;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+
+.title {
+  margin: 10px;
+}
+
+.scorebox{
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 70px;
+  left: 10%
+
+}
+span {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+}
+
+.btn {
+  color: yellow;
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+}
+
+#up{
+  border-radius: 20px 20px 0 0;
+}
+#left {
+  border-radius: 20px 0 0 20px;
+}
+#right {
+  border-radius: 0 20px 20px 0;
+}
+
+.controls{
+  position: absolute;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px;
+  display: none;
+  bottom: 10px;
+}
+
+#up {
+  grid-column: 2/3;
+  grid-row: 1/2
+}
+
+.other {
+  grid-row: 2;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .controls {
+      display: grid;
+      opacity: .4;
+    }
+
+    .scorebox{
+      font-size: 20px;
+    }
+    .scorebox span {
+      font-size: 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+}
+
+
+
