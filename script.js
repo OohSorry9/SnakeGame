@@ -21,6 +21,7 @@ window.addEventListener('resize' , () => {
 
 })
 
+let loseAudio = true
 
 
 //ENVIRONMENT VARIABLES
@@ -157,6 +158,10 @@ function animate() {
   if(gameOver){
     score = 0
     tryAgain()
+    if(loseAudio){
+    new Audio('Assets/die.mp3').play()
+    loseAudio = false
+    }
     return
   }
 
@@ -164,6 +169,7 @@ function animate() {
     snakeBody.push([food.position.x, food.position.y]);
     score++
     scoreElement.innerText = score
+    new Audio('Assets/eat.mp3').play()
     foodPos();
   }
 
@@ -240,6 +246,7 @@ function foodPos() {
 
 function tryAgain(){
   ctx.clearRect(0,0, canvas.width, canvas.height)
+  
   ctx.fillStyle = "RED"
   ctx.font = '60px Arial'
   ctx.textAlign = "center"
